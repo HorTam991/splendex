@@ -1,0 +1,217 @@
+{
+	"info": {
+		"_postman_id": "51bb0b9a-ec23-4af2-b35a-5317f4470c82",
+		"name": "Splendex",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get person list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/person/list"
+			},
+			"response": []
+		},
+		{
+			"name": "Get my invoice data",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/person/getMyInvoiceData/1"
+			},
+			"response": []
+		},
+		{
+			"name": "Get my bank transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/person/getMyBankTransactionLog?personId=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"getMyBankTransactionLog"
+					],
+					"query": [
+						{
+							"key": "personId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deposit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/transaction/deposit?personId=1&amount=2000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transaction",
+						"deposit"
+					],
+					"query": [
+						{
+							"key": "personId",
+							"value": "1"
+						},
+						{
+							"key": "amount",
+							"value": "2000"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Withdraw",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/transaction/withdraw?personId=1&amount=1300",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transaction",
+						"withdraw"
+					],
+					"query": [
+						{
+							"key": "personId",
+							"value": "1"
+						},
+						{
+							"key": "amount",
+							"value": "1300"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transfer",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/transaction/transfer?fromPersonId=1&toPersonId=2&amount=1500",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"transaction",
+						"transfer"
+					],
+					"query": [
+						{
+							"key": "fromPersonId",
+							"value": "1"
+						},
+						{
+							"key": "toPersonId",
+							"value": "2"
+						},
+						{
+							"key": "amount",
+							"value": "1500"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get my bank transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/person/getMyBankTransactions?personId=2&pageIndex=0&pageSize=5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"getMyBankTransactions"
+					],
+					"query": [
+						{
+							"key": "personId",
+							"value": "2"
+						},
+						{
+							"key": "filter",
+							"value": "%7B%22transactionTypeId%22:%221%22%7D",
+							"disabled": true
+						},
+						{
+							"key": "pageIndex",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Export my bank transactions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/person/exportMyBankTransactions?personId=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"exportMyBankTransactions"
+					],
+					"query": [
+						{
+							"key": "personId",
+							"value": "2"
+						},
+						{
+							"key": "filter",
+							"value": "%7B%22transactionTypeId%22:%221%22%7D",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
