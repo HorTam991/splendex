@@ -1,10 +1,11 @@
 package hu.tamas.splendex.service;
 
 import hu.tamas.splendex.model.Invoice;
+import hu.tamas.splendex.util.exception.AlreadyExistsInvoiceException;
 
 public interface InvoiceService {
 
-    Invoice save(Invoice invoice);
+    Invoice save(Invoice invoice) throws AlreadyExistsInvoiceException;
 
     Invoice update(Invoice invoice);
 

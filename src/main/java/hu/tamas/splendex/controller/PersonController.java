@@ -44,7 +44,7 @@ public class PersonController {
                                        @RequestParam(value = "pageIndex", required = false, defaultValue = "-1") final int pageIndex,
                                        @RequestParam(value = "pageSize", defaultValue = "-1") final int pageSize) {
         try {
-            Map<String, String> filterParams = jsonMapper.readValue(filter, new TypeReference<Map<String, String>>() {});
+            Map<String, String> filterParams = this.jsonMapper.readValue(filter, new TypeReference<Map<String, String>>() {});
             return new ResponseEntity<>(this.jsonMapper.writeValueAsString(this.personService.findAll(filterParams, pageIndex, pageSize)), HttpStatus.OK);
         } catch (IOException e) {
             log.error("list - ", e);
@@ -66,7 +66,7 @@ public class PersonController {
     @RequestMapping(method = RequestMethod.POST, produces = SystemKeys.Spring.PRODUCES_JSON_UTF8)
     public ResponseEntity<String> insert(@RequestBody Person data) {
         try {
-            personService.save(data);
+            this.personService.save(data);
             return new ResponseEntity<>(this.jsonMapper.writeValueAsString(data), HttpStatus.OK);
         } catch (JsonProcessingException e) {
             log.error("insert - ", e);
@@ -124,7 +124,7 @@ public class PersonController {
                                                         @RequestParam(value = "pageSize", defaultValue = "-1") final int pageSize) {
         try {
             log.info("Start getMyBankTransactions");
-            Map<String, String> filterParams = jsonMapper.readValue(filter, new TypeReference<Map<String, String>>() {});
+            Map<String, String> filterParams = this.jsonMapper.readValue(filter, new TypeReference<Map<String, String>>() {});
             return new ResponseEntity<>(this.jsonMapper.writeValueAsString(this.bankTransactionService.getMyBankTransactions(personId, filterParams, pageIndex, pageSize)), HttpStatus.OK);
         } catch (JsonProcessingException e) {
             log.error("getMyBankTransactions - ", e);
@@ -141,7 +141,7 @@ public class PersonController {
                                                            @RequestParam(value = "filter", required = false, defaultValue = "{}") final String filter) {
         try {
             log.info("Start exportMyBankTransactions");
-            Map<String, String> filterParams = jsonMapper.readValue(filter, new TypeReference<Map<String, String>>() {});
+            Map<String, String> filterParams = this.jsonMapper.readValue(filter, new TypeReference<Map<String, String>>() {});
 
             final HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.valueOf("application/vnd.ms-excel"));

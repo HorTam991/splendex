@@ -30,6 +30,10 @@ A /person endpointon keresztül hívható
 5. Ügyfél tranzakcióinak exportálása .xls fájlba, szűrési lehetőségekkel (/exportMyBankTransactions)
     Tranzakció típusa (transactionTypeId)
     Tranzakció dátuma (transactionDateFrom, transactionDateTo). Paraméterezéstől függően (>=, =<, between)
+## Invoice
+A /invoice endpointon keresztül hívható
+CUD műveletek
+Az idő rövidsége miatt egy emberhez csak egy számla tartozhat, ellenőrzés mentéskor
 ## Transactions
 A /transaction endpointon keresztül hívható
 1. Befizetés (/deposit)

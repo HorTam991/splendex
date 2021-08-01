@@ -20,7 +20,7 @@ public class Invoice extends AbstractEntity {
     private Person person;
 
     @Column(name = "actual_invoice_total")
-    private Long actualInvoiceTotal;
+    private Long actualInvoiceTotal = 0L;
 
     @Column(name = "invoice_number")
     private String invoiceNumber;

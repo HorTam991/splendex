@@ -35,6 +35,8 @@ public class SystemKeys {
         public static final String YOU_DONT_HAVE_INVOICE = "You don't have invoice!";
         public static final String YOU_DONT_HAVE_ENOUGH_MONEY_TO_TRANSFER = "You do not have enough money to make the transfer!";
         public static final String IT_CANNOT_BE_THE_SAME_SENDER_AND_TARGET = "It cannot be the same sender and target!";
+        public static final String INVOICE_ALREADY_EXISTS = "An invoice already exists with this invoice number!";
+        public static final String CUSTOMER_ALREADY_HAS_INVOICE = "Customer already has an invoice!";
     }
 
     public static class Exports {
